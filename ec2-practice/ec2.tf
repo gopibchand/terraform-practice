@@ -1,14 +1,10 @@
 resource "aws_instance" "test_instance" {
-    ami = "ami-00bb6a80f01f03502"
-    instance_type = "t2.micro"
-    subnet_id = "subnet-0abb918afa6ea9505"
-    key_name = "aws_login"
+    ami = var.ami
+    instance_type = var.type
+    subnet_id = var.subnet
+    key_name = var.key
     associate_public_ip_address = false
     availability_zone = "ap-south-1b"
     count = 2
-
-    tags = {
-        Name = "Testtf"
-        env = "dev"
-    }
+    tags = var.tags
 }
