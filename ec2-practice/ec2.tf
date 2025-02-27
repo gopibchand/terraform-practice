@@ -8,6 +8,7 @@ resource "aws_instance" "test_instance" {
     key_name = "aws_login"
     associate_public_ip_address = false
     availability_zone = "ap-south-1b"
+    count = 2
 
     tags = {
         Name = "Testtf"
