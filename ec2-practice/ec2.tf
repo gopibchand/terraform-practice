@@ -5,6 +5,14 @@ resource "aws_instance" "test_instance" {
     key_name = var.key
     associate_public_ip_address = false
     availability_zone = "ap-south-1b"
-    count = 2
+    count = 1
     tags = var.tags
+}
+
+resource "aws_s3_bucket" "test_bucket" {
+    bucket = "my-test-tygde"
+    tags = {
+        Name = "testing buc"
+    }
+  
 }
