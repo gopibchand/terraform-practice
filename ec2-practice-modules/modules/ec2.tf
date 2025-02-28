@@ -8,3 +8,7 @@ resource "aws_instance" "test_instance" {
     count = 2
     tags = var.tags
 }
+
+output "privateip" {
+    value = [for instance in aws_instance.test_instance: instance.private_ip]
+}
