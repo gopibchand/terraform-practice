@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('checkout') {
+            steps {
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gopibchand/terraform-practice.git']])
+        }
+    }
+        stage('build') {
+            steps {
+        sh 'cd EKS-Creation'
+        }
+    }
+    stage ('Terraform scripts') {
+        steps {
+            sh 'terraform init'
+            sh 'terraform validate'
+            sh 'terraform plan'
+        }
+    }
+    }
+}
