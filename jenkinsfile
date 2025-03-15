@@ -18,7 +18,7 @@ pipeline {
             sh '''
             pwd
             ls -lrt
-            cd EKS-Creation 
+            cd ${params.Terraform_folder} 
             terraform init
             terraform validate
             terraform plan
