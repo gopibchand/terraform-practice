@@ -17,9 +17,9 @@ pipeline {
         steps {
             sh 'pwd'
             sh 'ls -lrt'
-            sh 'terraform init'
-            sh 'terraform validate'
-            sh 'terraform plan'
+            sh 'cd EKS-Creation && terraform init'
+            sh 'cd EKS-Creation && terraform validate'
+            sh 'cd EKS-Creation && terraform plan'
         }
     }
     }
