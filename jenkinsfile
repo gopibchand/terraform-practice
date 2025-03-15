@@ -8,14 +8,14 @@ pipeline {
     }
     stage ('Terraform scripts') {
         steps {
-            sh '''
+            sh """
             pwd
             ls -lrt
             cd ${params.Terraform_folder} 
             terraform init
             terraform validate
             terraform plan
-            '''
+            """
         }
     }
     }
