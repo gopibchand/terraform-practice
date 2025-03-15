@@ -9,10 +9,14 @@ pipeline {
         stage('build') {
             steps {
         sh 'cd EKS-Creation'
+        sh 'pwd'
+        sh 'ls -lrt'
         }
     }
     stage ('Terraform scripts') {
         steps {
+            sh 'pwd'
+            sh 'ls -lrt'
             sh 'terraform init'
             sh 'terraform validate'
             sh 'terraform plan'
