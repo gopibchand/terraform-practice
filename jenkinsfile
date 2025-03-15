@@ -15,11 +15,14 @@ pipeline {
     }
     stage ('Terraform scripts') {
         steps {
-            sh 'pwd'
-            sh 'ls -lrt'
-            sh 'cd EKS-Creation && terraform init'
-            sh 'cd EKS-Creation && terraform validate'
-            sh 'cd EKS-Creation && terraform plan'
+            sh '''
+            pwd
+            ls -lrt
+            cd EKS-Creation 
+            terraform init
+            terraform validate
+            terraform plan
+            '''
         }
     }
     }
