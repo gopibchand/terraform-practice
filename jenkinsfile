@@ -6,13 +6,6 @@ pipeline {
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gopibchand/terraform-practice.git']])
         }
     }
-        stage('build') {
-            steps {
-        sh 'cd EKS-Creation'
-        sh 'pwd'
-        sh 'ls -lrt'
-        }
-    }
     stage ('Terraform scripts') {
         steps {
             sh '''
