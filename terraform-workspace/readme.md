@@ -1,0 +1,7 @@
+This folder is for terraform work spaces
+
+Here we created a module for re-use
+
+terraform by default look for terraform.tfvars only, if you are providing values externally to module. if you user var.tfvars or diff name with extension as .tfvars terraform wont recognize.
+
+if you want to call/use diff var file use CMD terraform apply -var-file=dev.tfvars
